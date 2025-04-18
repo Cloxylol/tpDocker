@@ -81,4 +81,4 @@ docker compose down
 
 ---
 
-## Par 
+## Par Florian Dardy & Cloé Petetin 
