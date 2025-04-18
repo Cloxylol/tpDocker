@@ -1,9 +1,6 @@
-FROM mysql:8.1  
+FROM mysql:8.1
 
-ENV MYSQL_ROOT_PASSWORD=example
-ENV MYSQL_DATABASE=testdb
+COPY conf/init.sql /docker-entrypoint-initdb.d/
 
-EXPOSE 5655
-
-HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 \
- CMD mysqladmin ping -h localhost -pexample || exit 1
+HEALTHCHECK --interval=10s --timeout=5s --retries=3 \
+  CMD mysqladmin ping -h 127.0.0.1 -P 3306 -pexample || exit 1
