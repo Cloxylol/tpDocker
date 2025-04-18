@@ -11,6 +11,7 @@ services:
       - db_network
     volumes:
       - db_volume:/var/lib/mysql
+      - ./mysql/conf/init.sql:/docker-entrypoint-initdb.d/init.sql
     expose:
       - "5655"
     healthcheck:
