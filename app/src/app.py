@@ -10,7 +10,7 @@ def health():
 @app.route('/data')
 def data():
     conn = pymysql.connect(
-        host='mysql', port=5655, user='root', password='example', database='testdb'
+        host='mysql', port=3306, user='root', password='example', database='testdb'
     )
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM test_table;")
