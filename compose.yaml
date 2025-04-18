@@ -41,6 +41,8 @@ services:
     container_name: nginx_container
     ports:
       - "5423:824"
+    volumes:
+      - ./nginx/conf/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     networks:
       - site_network
     depends_on:
